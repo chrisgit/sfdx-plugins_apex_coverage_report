@@ -69,6 +69,19 @@ Also to be clear
 
 ![Image of Salesforce VS Code Coverage Extension showing coverage](.images/vs-coverage-greeting.png)
 
+The output of this plugin is a file in one of the formats permitted, however, specifying lcov for example will also generate a HTML file with links to the source code.
+
+If you have used the sample project in this repository the output will be similar to the one below.
+
+- lcov summary
+![Image of lcov summary](.images/lcov-report-summary.png)
+
+- lcov class overview
+![Image of lcov class overview](.images/lcov-report-classes.png)
+
+- lcov class coverage
+![Image of lcov class coverage](.images/lcov-report-class-drilldown.png)
+
 ## Development
 
 ### Pre-requisities
