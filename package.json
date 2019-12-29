@@ -36,9 +36,10 @@
     ]
   },
   "scripts": {
-    "postpack": "rimraf oclif.manifest.json npm-shrinkwrap.json",
+    "postpack": "rimraf oclif.manifest.json",
     "posttest": "tslint -p test -t stylish",
-    "prepare": "rimraf lib && tsc -b && oclif-dev manifest && npm shrinkwrap",
+    "prepack": "rimraf lib && tsc -b && oclif-dev manifest",
+    "prepare": "rimraf lib && tsc -b",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
   },
@@ -46,7 +47,7 @@
     "@oclif/command": "1.5.11",
     "@oclif/config": "1.12.9",
     "@oclif/errors": "1",
-    "@salesforce/command": "^1.3.0",
+    "@salesforce/command": "^1.5.3",
     "@salesforce/core": "^1.2.2",
     "istanbul": "^0.4.5",
     "tslib": "1"
@@ -62,7 +63,7 @@
     "chai": "^4",
     "globby": "^9.1.0",
     "mocha": "^6.0.2",
-    "nyc": "^13.3.0",
+    "nyc": "^14.1.1",
     "rimraf": "^2.6.2",
     "sinon": "7.2.7",
     "ts-node": "^8.0.3",
