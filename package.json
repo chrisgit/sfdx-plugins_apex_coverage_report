@@ -1,9 +1,47 @@
 {
   "name": "sfdx-plugins-apex_coverage_report",
-  "description": "Code Coverage",
+  "description": "Apex Code Coverage",
   "version": "1.0.2",
   "author": "Chris Sullivan @chrisgit",
+  "homepage": "https://github.com/chrisgit/sfdx-plugins-apex_coverage_report",
   "bugs": "https://github.com/chrisgit/sfdx-plugins-apex_coverage_report/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrisgit/sfdx-plugins-apex_coverage_report"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=11.0.0"
+  },
+  "files": [
+    "/lib",
+    "/messages",
+    "/oclif.manifest.json",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "sfdx-plugin",
+    "coverage"
+  ],
+  "oclif": {
+    "commands": "./lib/commands",
+    "topics": {
+      "chrisgit": {
+        "description": "Command to create a code coverage report for local development or CI."
+      }
+    },
+    "devPlugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "scripts": {
+    "postpack": "rimraf oclif.manifest.json npm-shrinkwrap.json",
+    "posttest": "tslint -p test -t stylish",
+    "prepare": "rimraf lib && tsc -b && oclif-dev manifest && npm shrinkwrap",
+    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif-dev readme && git add README.md"
+  },
   "dependencies": {
     "@oclif/command": "1.5.11",
     "@oclif/config": "1.12.9",
@@ -28,39 +66,6 @@
     "rimraf": "^2.6.2",
     "sinon": "7.2.7",
     "ts-node": "^8.0.3",
-    "typescript": "^3.3.3333"
-  },
-  "engines": {
-    "node": ">=8.0.0"
-  },
-  "files": [
-    "/lib",
-    "/messages",
-    "/npm-shrinkwrap.json",
-    "/oclif.manifest.json"
-  ],
-  "homepage": "https://github.com/chrisgit/sfdx-plugins-apex_coverage_report",
-  "keywords": [
-    "sfdx-plugin"
-  ],
-  "license": "MIT",
-  "oclif": {
-    "commands": "./lib/commands",
-    "topics": {
-      "chrisgit": {
-        "description": "Command to create a code coverage report for local development or CI."
-      }
-    },
-    "devPlugins": [
-      "@oclif/plugin-help"
-    ]
-  },
-  "repository": "chrisgit/sfdx-coverage-plugin",
-  "scripts": {
-    "postpack": "rimraf oclif.manifest.json npm-shrinkwrap.json",
-    "posttest": "tslint -p test -t stylish",
-    "prepare": "rimraf lib && tsc -b && oclif-dev manifest && npm shrinkwrap",
-    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
-    "version": "oclif-dev readme && git add README.md"
+    "typescript": "3.3.3333"
   }
 }
