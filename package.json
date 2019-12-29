@@ -14,7 +14,7 @@
     "node": ">=11.0.0"
   },
   "files": [
-    "/lib",
+    "/lib/**/*",
     "/messages",
     "/oclif.manifest.json",
     "LICENSE",
