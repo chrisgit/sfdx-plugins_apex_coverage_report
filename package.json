@@ -26,6 +26,7 @@
   ],
   "oclif": {
     "commands": "./lib/commands",
+    "bin": "sfdx",
     "topics": {
       "chrisgit": {
         "description": "Command to create a code coverage report for local development or CI."
