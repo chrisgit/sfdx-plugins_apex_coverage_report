@@ -1,0 +1,8 @@
+{
+  "commandDescription": "Extract code coverage information from a Salesforce instance and generate a report",
+  "flagReportFormatDescription": "Please enter a report format, needs to be one of (all|text|clover|lcov|cobertura)",
+  "flagReportFormatLongDescription": "Please enter the code coverage report formats",
+  "flagSourceLocationDescription": "Please enter a location for the source code (default cwd)",
+  "flagSourceLocationLongDescription": "Please enter a location for the source code (default cwd)",
+  "errorNoOrgResults": "No test results found for the org '%s'. Please run Apex tests with code coverage."
+}
