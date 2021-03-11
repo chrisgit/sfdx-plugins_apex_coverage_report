@@ -22,7 +22,7 @@ export class ApexClassRepository {
 
   public findAll(): Array<ApexClassItem> {
     return this.classData;
-  }
+  
 
   public findById(id: string): ApexClassItem {
     return this.classData.filter(item => item.Id == id)[0];
